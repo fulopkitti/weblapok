@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Noto+Sans+JP:wght@100&family=Playfair+Display&family=Roboto:wght@400;900&display=swap');
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    padding: 6px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'PlayFair Display', sans-serif;
+}
+
+.container>* {
+    margin: 1%;
+    height: fit-content;
+}
+
+html {
+    padding: 0px;
+    margin: 0px;
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    /* background-image: url("melindak-kepek/terhesno_hatter_fako.png");
+    background-size: cover;
+    position: absolute;
+    background-repeat:repeat; */
+}
+
+.idopontf {
+    /* padding: 0px;
+    margin: 0px;  */
+    background: url(melindak-kepek/terhesno_hatter_fako.png)no-repeat center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+html {
+    background: url(melindak-kepek/terhesno_hatter_fako.png) repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-size: cover;
+    /* position: absolute;
+    background-repeat:repeat; */
+
+}
+
+header {
+    margin: 0 !important;
+    /* background-color: #ff7c9f; */
+    background-color: rgba(255, 124, 159, 0.3);
+    border-radius: 7px;
+    padding: 5px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: large;
+}
+
+/* menü */
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 1 100%;
+    background-color: rgba(242, 1, 122, 0.15);
+    padding: 15px;
+    border-radius: 15px;
+    justify-content: space-evenly;
+}
+
+nav div {
+    list-style-type: none;
+    padding: 2px;
+}
+
+nav div a {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.active {
+    background-color: rgba(255, 124, 159, 0.3);
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.aside_kepe1 {
+    /* display: block; */
+    display: flex;
+    width: 200px;
+    height: auto;
+    border-radius: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    flex: 100%;
+
+}
+
+.aside_kepe2 {
+    /* display: block; */
+    display: flex;
+    width: 200px;
+    height: auto;
+    border-radius: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    float: inline-end;
+    flex: 100%;
+}
+
+/* p */
+
+.fekete {
+    color: black;
+    font-weight: bold;
+}
+
+article,
+aside {
+    background-color: rgba(189, 52, 0, 0.05);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+table {
+    border: black;
+    width: 100%;
+}
+
+#images {
+    width: 95%;
+}
+
+.galleria-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    width: 500px;
+    text-align: center;
+}
+
+.kuzusok {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+@media all and (min-width: 0px) and (max-width: 599px) {
+    /* mobil */
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .galleria-container {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 600px) {
+
+    /*tablet*/
+    .aside_kepe1 {
+        margin: 20px;
+        float: left;
+        flex: 48%;
+    }
+
+    .aside_kepe2 {
+        margin: 20px;
+        float: right;
+        flex: 48%;
+    }
+}
+
+@media all and (min-width: 768px) {
+
+    /*számítógép*/
+    .aside_kepe1 {
+        margin: 20px;
+        float: left;
+    }
+
+    .aside_kepe2 {
+        margin: 20px;
+        float: right;
+    }
+
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="idopontf">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="copyright" content="">-->
+    <!-- plusz meták -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Fülöp Kitti Mariann">
+    <link rel="stylesheet" href="melindak.css">
+
+    <!--favicon kezdete-->
+    <link rel="apple-touch-icon" sizes="180x180" href="melindak-kepek/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="melindak-kepek/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="melindak-kepek/favicon/favicon-16x16.png">
+    <link rel="manifest" href="melindak-kepek/favicon/site.webmanifest">
+    <!--favicon vége-->
+    <!--validalas-->
+    <script src="must/jquery-3.6.1.min.js"></script>
+    <script src="must/jquery-validation-1.19.5/dist/jquery.validate.min.js"></script>
+
+
+    <script>$(document).ready(function () {
+
+            $("#myform").validate({
+                rules: {
+                    knev: {
+                        required: true
+                    },
+                    vnev: {
+                        required: true
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    tel: {
+                        required: true,
+                        minlength: 10,
+                        maxlength: 11
+                    }
+                },
+                messages: {
+                    knev: " Írd be a keresztneved!",
+                    vnev: " Írd be a vezetékneved!",
+                    email: " Kérlek valós email címet adj meg!",
+                    tel: " Kérlek add meg a telefonszámod!"
+
+                }
+            });
+        });</script>
+
+    <script>$(document).ready(function () {
+
+            $("#myform2").validate({
+                rules: {
+                    knev: {
+                        required: true
+                    },
+                    vnev: {
+                        required: true
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    tel: {
+                        required: true,
+                        minlength: 10,
+                        maxlength: 11
+                    }
+                },
+                messages: {
+                    knev: " Írd be a keresztneved!",
+                    vnev: " Írd be a vezetékneved!",
+                    email: " Kérlek valós email címet adj meg!",
+                    tel: " Kérlek add meg a telefonszámod!"
+
+                }
+            });
+        });</script>
+
+    <script>
+        const form = document.getElementById('form');
+        const select = document.getElementById('idopont');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from getting submitted normally
+            const selectedValue = select.value;
+            const selectedName = nev.value;
+            const givenEmail = input.email;
+
+            const email = 'fulopkitti23@gmail.com';
+            const message = `Foglalt időpont: ${selectedValue}, ${selectedName}, ${givenEmail}`;
+            if (window.navigator.msSendOrExportToEmail) { // IE support
+                return window.navigator.msSendOrExportToEmail(new Windows.Networking.Dispatcher.EmailCompose()).show();
+            } else {
+                fetch('send-email.php', {
+                    method: 'POST', // POST the data to the server script
+                    body: JSON.stringify({ selectedValue: selectedValue }),
+                    body: JSON.stringify({ selectedValue: selectedName }),
+                    body: JSON.stringify({ selectedValue: givenEmail }),
+                    headers: { 'Content-Type': 'application/json' }
+                })
+                    .then(response < - json = JSON.parse(response.text))
+                    .then(json < - { status: 0, data: '' })
+                    .then(() < - {
+                        if(json.status === 204) {
+                    // Option deleted successfully!
+                    const selectInput = form.querySelector('input[name=selected_option]');
+                    selectInput.remove();
+                }
+            });
+    }
+  });
+
+    </script>
+    <!--Validalas vege-->
+
+    <title>"Melindák" Szülésfelkészítés</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <h1>"MELINDÁK" Szülésfelkészítés</h1>
+        </header>
+
+        <nav>
+            <div>
+                <h2><a href="melindak.html">Bemutatkozás</a></h2>
+            </div>
+            <div>
+                <h2><a class="active" href="#">Időpontfoglalás</a></h2>
+            </div>
+        </nav>
+        <div class="kurzusok">
+            <article>
+                <h2>Tudnivalók:</h2>
+                <p>A felkészítés első alkalommal 20.000 Ft</p>
+                <p>Második és további alkalmakal 15.000 Ft</p>
+                <p>A hatékonyság érdekében ajánlott az első alkalommal kiválasztott felkészítőnél folytatni a többi alkalmat.</p>
+            </article>
+            <article>
+                <form action="#" id="myform2" method="post" novalidate>
+                    <h2>Právicz-Kárász Melinda</h2><br><br>
+
+                    Időpont:
+                    <select id="idopont">
+                        <option value="option6">Április 21 - 19:00. </option>
+                        <option value="option1">Április 22 - 19:00. </option>
+                        <option value="option2">Április 23 - 10:00. </option>
+                        <option value="option3">Április 24 - 19:00. </option>
+                        <option value="option4">Április 26 - 18:00. </option>
+                        <option value="option5">Április 28 - 19:00. </option>
+                        <option value="option6">Április 30 - 19:00. </option>
+                    </select><br><br>
+
+                    <label for="nev">Név: </label>
+                    <input type="text" name="knev" id="knev"><br><br>
+
+                    <label for="email">E-mail cím: </label>
+                    <input type="email" name="email" id="email"><br><br>
+
+
+                    <p><input type="submit" value="Elküldés"></p>
+
+                </form>
+            </article>
+
+            <article>
+                <form action="https://melindak-idopontfoglalas-default-rtdb.europe-west1.firebasedatabase.app/" id="myform" method="post" novalidate>
+                    <h2>Kaizer Melinda</h2><br><br>
+
+                    Időpont:
+                    <select id="idopont">
+                        <option value="option6">Április 21 - 16:00. </option>
+                        <option value="option1">Április 22 - 16:00. </option>
+                        <option value="option2">Április 23 - 17:00. </option>
+                        <option value="option3">Április 28 - 16:00. </option>
+                        <option value="option4">Április 29 - 16:00. </option>
+                        <option value="option5">Április 30 - 16:00. </option>
+                    </select><br><br>
+
+                    <label for="nev">Név: </label>
+                    <input type="text" name="knev" id="knev"><br><br>
+
+                    <label for="email">E-mail cím: </label>
+                    <input type="email" name="email" id="email"><br><br>
+
+
+                    <p><input type="submit" value="Elküldés"></p>
+
+                </form>
+            </article>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
