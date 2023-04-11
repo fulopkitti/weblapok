@@ -21,6 +21,10 @@
     <script src="must/jquery-3.6.1.min.js"></script>
     <script src="must/jquery-validation-1.19.5/dist/jquery.validate.min.js"></script>
 
+    <!-- Google Font Link for Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <script src="script.js" defer></script>
+
 
     <script>$(document).ready(function () {
 
@@ -197,6 +201,33 @@
                     <p><input type="submit" value="Elküldés"></p>
 
                 </form>
+                <p></p>
+                <p></p>
+                <div class="wrapper">
+                    <header>
+                      <p class="current-date"></p>
+                      <div class="icons">
+                        <span id="prev" class="material-symbols-rounded">chevron_left</span>
+                        <span id="next" class="material-symbols-rounded">chevron_right</span>
+                      </div>
+                    </header>
+                    <div class="calendar">
+                
+                      <ul class="weeks">
+                
+                        <li>H</li>
+                        <li>K</li>
+                        <li>Sze</li>
+                        <li>Cs</li>
+                        <li>P</li>
+                        <li>Szo</li>
+                        <li>V</li>
+                      </ul>
+                
+                      <ul class="days"></ul>
+                
+                    </div>
+                  </div>
             </article>
         </div>
 
